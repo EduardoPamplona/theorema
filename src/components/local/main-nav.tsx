@@ -1,3 +1,5 @@
+"use client";
+
 import { NavItem, siteConfig } from "@/lib/config/site";
 
 import { Icons } from "@/components/local/icons";
