@@ -11,6 +11,9 @@
   "dependencies": {
     "@prisma/client": "^5.5.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@trpc/client": "^10.43.1",
+    "@trpc/react-query": "^10.43.1",
+    "@trpc/server": "^10.43.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.292.0",
