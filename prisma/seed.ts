@@ -5,35 +5,6 @@ import { users } from "./seedData";
 async function seedUsers() {
   const seed = users.map(async (u) => {
     const passwordHash = await bcrypt.hash(u.password, 10);
-    const user = await prisma.user.create({
-      data: {
-        email: u.email,
-        password: passwordHash,
-        name: u.name,
-      },
-    });
-    if (u.role == "PROFESSOR") {
-      await prisma.professor.create({
-        data: {
-          user: {
-            connect: {
-              id: user.id,
-            },
-          },
-        },
-      });
-    } else if (u.role == "STUDENT") {
-      await prisma.student.create({
-        data: {
-          user: {
-            connect: {
-              id: user.id,
-            },
-          },
-        },
-      });
-    } else {
-    }
   });
   await Promise.all(seed);
 
